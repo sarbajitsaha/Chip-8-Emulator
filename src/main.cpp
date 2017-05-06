@@ -27,6 +27,7 @@ uint8_t keymap[16] = {
 
 int main(int argc, char *argv[])
 {
+
     if (argc <= 1)
     {
         std::cerr << "Path to ROM to be loaded must be given as argument\nType -help to see usage\n";
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
     {
         //print the help menu
         std::cout << "Normal usage: ./Chip8_Emulator <path_to_rom>\n"
+                  << "By default,audio is on. You can disable it by adding -a\n"
                   << "Other modes are also available\n"
                   << "1. Single step mode:\n"
                   << "Type -s flag to execute one instruction at a time waiting for you to press enter after each cycle\n"
@@ -55,7 +57,7 @@ int main(int argc, char *argv[])
     }
 
 
-    bool trace_mode = false, single_step_mode = false;
+    bool trace_mode = false, single_step_mode = false, audio_on = true;
     if (argc > 2) //there are flags
     {
         for (int i = 2; i < argc; i++)
@@ -67,6 +69,10 @@ int main(int argc, char *argv[])
             else if (strcmp(argv[i], "-s") == 0) //single step mode
             {
                 single_step_mode = true;
+            }
+            else if (strcmp(argv[i], "-a") == 0)
+            {
+                audio_on = false;
             }
             else
             {
@@ -119,7 +125,7 @@ int main(int argc, char *argv[])
 
     while (true)
     {
-        chip8.single_cycle(trace_mode);
+        chip8.single_cycle(trace_mode, audio_on);
 
         SDL_Event event;
         while (SDL_PollEvent(&event))

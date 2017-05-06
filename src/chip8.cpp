@@ -101,7 +101,7 @@ void Chip8::set_keypad_value(int index, int val)
 }
 
 //emulates one cycle
-void Chip8::single_cycle(bool trace_mode)
+void Chip8::single_cycle(bool trace_mode, bool sound_on)
 {
     //2 byte opcode
     int opcode = (memory[pc] << 8) | (memory[pc + 1]);
@@ -144,7 +144,7 @@ void Chip8::single_cycle(bool trace_mode)
             break;
 
         case 1:
-            //d = opcode & 0x0FFF;
+            pc = opcode & 0x0FFF;
             break;
 
         case 2:
@@ -535,6 +535,10 @@ void Chip8::single_cycle(bool trace_mode)
     }
     if (sound_timer > 0)
     {
+        if (sound_on)
+        {
+            printf("\a"); //terminal dependent, should be changed later
+        }
         sound_timer--;
     }
 }

@@ -43,7 +43,7 @@ public:
 
     void set_draw_flag(bool);
 
-    void single_cycle(bool);
+    void single_cycle(bool, bool);
 
     int get_display_value(int);
 
