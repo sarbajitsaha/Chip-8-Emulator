@@ -3,6 +3,14 @@ This is a simple Chip 8 emulator written in C++. CHIP-8 is an interpreted progra
 
 [This article on Wikipedia](https://en.wikipedia.org/wiki/CHIP-8 "CHIP-8") explains the virtual machine(CPU,memory,display and keypad) and the opcodes supported. 
 
+## Screenshots
+
+PONG2
+(https://github.com/sarbajitsaha/Chip-8-Emulator/screenshots/pong2.jpg "PONG2 in Chip 8")
+
+BRIX
+(https://github.com/sarbajitsaha/Chip-8-Emulator/screenshots/brix.jpg "BRIX in Chip 8")
+
 
 ## Building
 
