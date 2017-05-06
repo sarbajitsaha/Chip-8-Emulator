@@ -6,10 +6,10 @@ This is a simple Chip 8 emulator written in C++. CHIP-8 is an interpreted progra
 ## Screenshots
 
 PONG2
-![alt text](https://github.com/sarbajitsaha/Chip-8-Emulator/screenshots/pong2.jpg "PONG2 in Chip 8")
+![alt text](https://raw.githubusercontent.com/sarbajitsaha/Chip-8-Emulator/master/screenshots/pong2.jpg "PONG2 in Chip 8")
 
 BRIX
-![alt text](https://github.com/sarbajitsaha/Chip-8-Emulator/screenshots/brix.jpg "BRIX in Chip 8")
+![alt text](https://raw.githubusercontent.com/sarbajitsaha/Chip-8-Emulator/master/screenshots/brix.jpg "BRIX in Chip 8")
 
 
 ## Building
