@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Chip8_Emulator"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Chip8_Emulator">
+				<Option output="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Chip8_Emulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 Chip8_Emulator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Chip8_Emulator/fast">
+				<Option output="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Chip8_Emulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/../../../../include/c++/6.3.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 Chip8_Emulator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/src/chip8.cpp">
+			<Option target="Chip8_Emulator"/>
+		</Unit>
+		<Unit filename="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/src/chip8.h">
+			<Option target="Chip8_Emulator"/>
+		</Unit>
+		<Unit filename="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/src/main.cpp">
+			<Option target="Chip8_Emulator"/>
+		</Unit>
+		<Unit filename="/home/saha/Desktop/Programming/C++/chip8/Chip8EmulatorSaha/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
