@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/Chip8_Emulator.dir/src/main.cpp.o CMakeFiles/Chip8_Emulator.dir/src/chip8.cpp.o  -o Chip8_Emulator -rdynamic -lSDL2 
