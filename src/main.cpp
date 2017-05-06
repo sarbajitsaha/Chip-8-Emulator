@@ -7,21 +7,21 @@
 #include "chip8.h"
 
 uint8_t keymap[16] = {
-        SDLK_s,
+        SDLK_x,
         SDLK_1,
         SDLK_2,
         SDLK_3,
-        SDLK_4,
         SDLK_q,
         SDLK_w,
         SDLK_e,
-        SDLK_r,
         SDLK_a,
+        SDLK_s,
         SDLK_d,
-        SDLK_f,
         SDLK_z,
-        SDLK_x,
         SDLK_c,
+        SDLK_4,
+        SDLK_r,
+        SDLK_f,
         SDLK_v,
 };
 
@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
             SDL_RenderPresent(renderer);
         }
 
-        usleep(1000);
+        usleep(1500);
     }
 
     return 0;

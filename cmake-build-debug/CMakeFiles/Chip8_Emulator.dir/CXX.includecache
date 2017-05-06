@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/saha/Desktop/Programming/C++/Chip-8-Emulator/src/chip8.cpp
+/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.cpp
 cstring
 -
 fstream
@@ -14,15 +14,15 @@ fstream
 iostream
 -
 chip8.h
-/home/saha/Desktop/Programming/C++/Chip-8-Emulator/src/chip8.h
+/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.h
 
-/home/saha/Desktop/Programming/C++/Chip-8-Emulator/src/chip8.h
+/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.h
 cstdint
 -
 string
 -
 
-/home/saha/Desktop/Programming/C++/Chip-8-Emulator/src/main.cpp
+/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/main.cpp
 iostream
 -
 zconf.h
@@ -36,7 +36,7 @@ SDL_events.h
 SDL.h
 -
 chip8.h
-/home/saha/Desktop/Programming/C++/Chip-8-Emulator/src/chip8.h
+/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h
@@ -369,8 +369,6 @@ close_code.h
 /usr/include/SDL2/SDL_pixels.h
 SDL_stdinc.h
 /usr/include/SDL2/SDL_stdinc.h
-SDL_endian.h
-/usr/include/SDL2/SDL_endian.h
 begin_code.h
 /usr/include/SDL2/begin_code.h
 close_code.h
@@ -478,6 +476,8 @@ ctype.h
 math.h
 -
 float.h
+-
+iconv.h
 -
 sal.h
 -

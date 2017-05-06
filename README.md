@@ -5,11 +5,11 @@ This is a simple Chip 8 emulator written in C++. CHIP-8 is an interpreted progra
 
 ## Screenshots
 
-###PONG2
+### PONG2
 
 ![alt text](https://raw.githubusercontent.com/sarbajitsaha/Chip-8-Emulator/master/screenshots/pong2.jpg "PONG2 in Chip 8")
 
-###BRIX
+### BRIX
 
 ![alt text](https://raw.githubusercontent.com/sarbajitsaha/Chip-8-Emulator/master/screenshots/brix.jpg "BRIX in Chip 8")
 
@@ -52,19 +52,20 @@ The original Chip 8 had a hexadecimal keypad (0 - 9 and A - F). The key mapping 
 | `1`        | `1`          |
 | `2`        | `2`          |
 | `3`        | `3`          |
-| `4`        | `4`          |
-| `5`        | `Q`          |
-| `6`        | `W`          |
-| `7`        | `E`          |
-| `8`        | `R`          |
-| `9`        | `A`          |
-| `0`        | `S`          |
-| `A`        | `D`          |
-| `B`        | `F`          |
-| `C`        | `Z`          |
-| `D`        | `X`          |
-| `E`        | `C`          |
+| `4`        | `Q`          |
+| `5`        | `W`          |
+| `6`        | `E`          |
+| `7`        | `A`          |
+| `8`        | `S`          |
+| `9`        | `D`          |
+| `0`        | `X`          |
+| `A`        | `Z`          |
+| `B`        | `C`          |
+| `C`        | `4`          |
+| `D`        | `R`          |
+| `E`        | `F`          |
 | `F`        | `V`          |
+
 
 ## License
 
