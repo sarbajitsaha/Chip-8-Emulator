@@ -43,6 +43,19 @@ So you can start the PONG game available in the roms directory by
 ./Chip8_Emulator ../roms/PONG
 ```
 
+## Modes
+
+There are two modes available - trace mode and single step mode.
+You can also type _-help_ to check usage
+
+- Trace mode - Type -t to print the program counter, register values and opcode executed each cycle. It follows this pattern: 
+
+   pc opcode I sp V0 to VF
+   
+- Single step mode - Type -s flag to execute one instruction at a time waiting for you to press enter after each cycle.
+
+Both modes can be used simultaneously. 
+
 ## Keypad
 
 The original Chip 8 had a hexadecimal keypad (0 - 9 and A - F). The key mapping here is as follows - 

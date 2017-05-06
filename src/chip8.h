@@ -9,11 +9,13 @@
 #include <cstdint>
 #include <string>
 
-class Chip8 {
+class Chip8
+{
 private:
     //CPU
     uint8_t V[16]; //16 8 bit registers Vx where x ranges from 0 to F
-    uint16_t I, pc, sp; //16 bit register I,16 bit program counter, 8 bit stack pointer
+    uint16_t I, pc;
+    uint8_t sp; //16 bit register I,16 bit program counter, 8 bit stack pointer
     uint16_t stack[16]; //16 16bit values can be stored in stack
     uint8_t delay_timer, sound_timer; //delay and sound 8 bit registers
 
@@ -41,7 +43,7 @@ public:
 
     void set_draw_flag(bool);
 
-    void single_cycle();
+    void single_cycle(bool);
 
     int get_display_value(int);
 

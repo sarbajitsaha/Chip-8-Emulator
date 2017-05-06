@@ -8,7 +8,8 @@
 #include "chip8.h"
 
 //constructor
-Chip8::Chip8() {
+Chip8::Chip8()
+{
     unsigned char chip8_fontset[80] =
             {
                     0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
@@ -45,7 +46,8 @@ Chip8::Chip8() {
     draw_flag = false;
 
     //load fontset from 0 to 80
-    for (int i = 0; i < 80; i++) {
+    for (int i = 0; i < 80; i++)
+    {
         memory[i] = chip8_fontset[i];
     }
 
@@ -55,16 +57,20 @@ Chip8::Chip8() {
 }
 
 //function to load ROM, with path to ROM given as argument
-bool Chip8::load_rom(std::string rom_path) {
+bool Chip8::load_rom(std::string rom_path)
+{
     std::ifstream f(rom_path, std::ios::binary | std::ios::in);
-    if (!f.is_open()) {
+    if (!f.is_open())
+    {
         return false;
     }
     //load in memory from 0x200(512) onwards
     char c;
     int j = 512;
-    for (int i = 0x200; f.get(c); i++) {
-        if (j >= 4096) {
+    for (int i = 0x200; f.get(c); i++)
+    {
+        if (j >= 4096)
+        {
             return false; //file size too big memory space over so exit
         }
         memory[i] = (uint8_t) c;
@@ -74,38 +80,50 @@ bool Chip8::load_rom(std::string rom_path) {
 }
 
 
-bool Chip8::get_draw_flag() {
+bool Chip8::get_draw_flag()
+{
     return draw_flag;
 }
 
-void Chip8::set_draw_flag(bool flag) {
+void Chip8::set_draw_flag(bool flag)
+{
     draw_flag = flag;
 }
 
-int Chip8::get_display_value(int i) {
+int Chip8::get_display_value(int i)
+{
     return display[i];
 }
 
-void Chip8::set_keypad_value(int index, int val) {
+void Chip8::set_keypad_value(int index, int val)
+{
     keypad[index] = val;
 }
 
 //emulates one cycle
-void Chip8::single_cycle() {
+void Chip8::single_cycle(bool trace_mode)
+{
     //2 byte opcode
     int opcode = (memory[pc] << 8) | (memory[pc + 1]);
     int opcode_msb_nibble = get_nibble(opcode, 12, 0xF000); //if value is ABCD(each 4 bits), it returns A
     int val, reg, reg1, reg2;
 
-    /* printf("%d %.4x ", pc, opcode);
-     for (int i = 0; i < 15; i++)
-         printf("%d ", V[i]);
-     printf("\n");*/
+    if (trace_mode)
+    {
+        printf("%.4X %.4X %.2X ", pc, opcode, sp);
+        for (int i = 0; i < 15; i++)
+        {
+            printf("%.2X ", V[i]);
+        }
+        printf("\n");
+    }
 
-    switch (opcode_msb_nibble) {
+    switch (opcode_msb_nibble)
+    {
         case 0:
             //only found 00E0 and 00EE starting with 0 so check for these two
-            switch (opcode) {
+            switch (opcode)
+            {
                 case 0x00E0:
                     memset(display, 0, sizeof(display));
                     draw_flag = true;
@@ -126,8 +144,7 @@ void Chip8::single_cycle() {
             break;
 
         case 1:
-            //only instruction is 1NNN Jumps to address NNN.
-            pc = opcode & 0x0FFF;
+            //d = opcode & 0x0FFF;
             break;
 
         case 2:
@@ -143,7 +160,8 @@ void Chip8::single_cycle() {
             val = get_nibble(opcode, 0, 0x00FF); //extract the lower 8 bits
             reg = get_nibble(opcode, 8, 0x0F00); //get the X from opcode
             pc += 2; //next instruction
-            if (V[reg] == val) {
+            if (V[reg] == val)
+            {
                 pc += 2; //adding 2 again so this instruction is skipped
             }
             break;
@@ -153,7 +171,8 @@ void Chip8::single_cycle() {
             val = get_nibble(opcode, 0, 0x00FF); //extract the lower 8 bits
             reg = get_nibble(opcode, 8, 0x0F00); //get the X from opcode
             pc += 2; //next instruction
-            if (V[reg] != val) {
+            if (V[reg] != val)
+            {
                 pc += 2; //adding 2 again so this instruction is skipped
             }
             break;
@@ -163,7 +182,8 @@ void Chip8::single_cycle() {
             reg1 = get_nibble(opcode, 8, 0x0F00);
             reg2 = get_nibble(opcode, 4, 0x00F0);
             pc += 2;
-            if (V[reg1] == V[reg2]) {
+            if (V[reg1] == V[reg2])
+            {
                 pc += 2;
             }
             break;
@@ -187,7 +207,8 @@ void Chip8::single_cycle() {
         case 8:
             //multiple instructions possible
             val = get_nibble(opcode, 0, 0x000F); //extract last 4 bits
-            switch (val) {
+            switch (val)
+            {
                 case 0:
                     //8XY0. Sets VX to the value of VY.
                     reg1 = get_nibble(opcode, 8, 0x0F00);
@@ -227,9 +248,12 @@ void Chip8::single_cycle() {
                     //Adds VY to VX. VF is set to 1 when there's a carry, and to 0 when there isn't.
                     reg1 = get_nibble(opcode, 8, 0x0F00);
                     reg2 = get_nibble(opcode, 4, 0x00F0);
-                    if (V[reg1] + V[reg2] > 0xFF) {
+                    if (V[reg1] + V[reg2] > 0xFF)
+                    {
                         V[0xF] = 1;
-                    } else {
+                    }
+                    else
+                    {
                         V[0xF] = 0;
                     }
                     V[reg1] += V[reg2];
@@ -241,9 +265,12 @@ void Chip8::single_cycle() {
                     //VY is subtracted from VX. VF is set to 0 when there's a borrow, and 1 when there isn't.
                     reg1 = get_nibble(opcode, 8, 0x0F00);
                     reg2 = get_nibble(opcode, 4, 0x00F0);
-                    if (V[reg1] < V[reg2]) {
+                    if (V[reg1] < V[reg2])
+                    {
                         V[0xF] = 0;
-                    } else {
+                    }
+                    else
+                    {
                         V[0xF] = 1;
                     }
                     V[reg1] = (uint8_t) V[reg1] - (uint8_t) V[reg2];
@@ -263,9 +290,12 @@ void Chip8::single_cycle() {
                     //Sets VX to VY minus VX. VF is set to 0 when there's a borrow, and 1 when there isn't.
                     reg1 = get_nibble(opcode, 8, 0x0F00);
                     reg2 = get_nibble(opcode, 4, 0x00F0);
-                    if (V[reg1] > V[reg2]) {
+                    if (V[reg1] > V[reg2])
+                    {
                         V[0xF] = 0;
-                    } else {
+                    }
+                    else
+                    {
                         V[0xF] = 1;
                     }
                     V[reg1] = (uint8_t) V[reg2] - (uint8_t) V[reg1];
@@ -293,7 +323,8 @@ void Chip8::single_cycle() {
             reg1 = get_nibble(opcode, 8, 0x0F00);
             reg2 = get_nibble(opcode, 4, 0x00F0);
             pc += 2;
-            if (V[reg1] != V[reg2]) {
+            if (V[reg1] != V[reg2])
+            {
                 pc += 2;
             }
             break;
@@ -332,13 +363,18 @@ void Chip8::single_cycle() {
             int wt = 8;
             V[0x0F] = 0;
 
-            for (int i = 0; i < ht; i++) {
+            for (int i = 0; i < ht; i++)
+            {
                 int pixel = memory[I + i];
-                for (int j = 0; j < wt; j++) {
-                    if ((pixel & (0x80 >> j)) != 0) {
+                for (int j = 0; j < wt; j++)
+                {
+                    if ((pixel & (0x80 >> j)) != 0)
+                    {
                         int index = ((x + j) + ((y + i) * 64)) % 2048;
                         if (display[index] == 1)
+                        {
                             V[0x0F] = 1;
+                        }
                         display[index] ^= 1;
                     }
                 }
@@ -351,13 +387,16 @@ void Chip8::single_cycle() {
         case 14: //0x0E
             //two instructions possible
             val = get_nibble(opcode, 0, 0x00FF);
-            switch (val) {
+            switch (val)
+            {
                 case 0x9E:
                     //Skips the next instruction if the key stored in VX is pressed.
                     reg = get_nibble(opcode, 8, 0x0F00);
                     pc += 2;
                     if (keypad[V[reg]] != 0)
+                    {
                         pc += 2;
+                    }
                     break;
 
                 case 0xA1:
@@ -365,7 +404,9 @@ void Chip8::single_cycle() {
                     reg = get_nibble(opcode, 8, 0x0F00);
                     pc += 2;
                     if (keypad[V[reg]] == 0)
+                    {
                         pc += 2;
+                    }
                     break;
 
                 default:
@@ -378,7 +419,8 @@ void Chip8::single_cycle() {
         case 15: //0x0F
             //multiple instructions possible
             val = get_nibble(opcode, 0, 0x00FF);
-            switch (val) {
+            switch (val)
+            {
                 case 0x07:
                     //FX07. Sets VX to the value of the delay timer.
                     reg = get_nibble(opcode, 8, 0x0F00);
@@ -391,14 +433,18 @@ void Chip8::single_cycle() {
                 {
                     bool key_pressed = false;
                     reg = get_nibble(opcode, 8, 0x0F00);
-                    for (int i = 0; i < 16; i++) {
-                        if (keypad[i] != 0) {
+                    for (int i = 0; i < 16; i++)
+                    {
+                        if (keypad[i] != 0)
+                        {
                             key_pressed = true;
                             V[reg] = (uint8_t) i;
                         }
                     }
                     if (key_pressed)
+                    {
                         pc += 2;
+                    }
                     break;
                 }
 
@@ -420,9 +466,13 @@ void Chip8::single_cycle() {
                     //Adds VX to I
                     reg = get_nibble(opcode, 8, 0x0F00);
                     if (I + V[reg] > 0xFFF)
+                    {
                         V[0xF] = 1;
+                    }
                     else
+                    {
                         V[0xF] = 0;
+                    }
                     I += V[reg];
                     I = (uint16_t) I;
                     pc += 2;
@@ -447,7 +497,8 @@ void Chip8::single_cycle() {
                 case 0x55:
                     //Stores V0 to VX (including VX) in memory starting at address I
                     reg = get_nibble(opcode, 8, 0x0F00);
-                    for (int i = 0; i <= reg; i++) {
+                    for (int i = 0; i <= reg; i++)
+                    {
                         memory[I + i] = V[i];
                     }
                     I = I + reg + 1;
@@ -458,7 +509,8 @@ void Chip8::single_cycle() {
                 case 0x65:
                     //Fills V0 to VX (including VX) with values from memory starting at address I
                     reg = get_nibble(opcode, 8, 0x0F00);
-                    for (int i = 0; i <= reg; i++) {
+                    for (int i = 0; i <= reg; i++)
+                    {
                         V[i] = memory[I + i];
                     }
                     I = I + reg + 1;
@@ -478,13 +530,18 @@ void Chip8::single_cycle() {
     }
 
     if (delay_timer > 0)
+    {
         delay_timer--;
+    }
     if (sound_timer > 0)
+    {
         sound_timer--;
+    }
 }
 
 //destructor
-Chip8::~Chip8() {}
+Chip8::~Chip8()
+{}
 
 //helper functions
 int Chip8::get_nibble(int val, int bits, int val_to_binary_and = 0xFFFF) //extracts 4 bits from val
