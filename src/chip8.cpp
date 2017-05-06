@@ -537,7 +537,7 @@ void Chip8::single_cycle(bool trace_mode, bool sound_on)
     {
         if (sound_on)
         {
-            printf("\a"); //terminal dependent, should be changed later
+            printf("\a\n"); //terminal dependent, should be changed later
         }
         sound_timer--;
     }

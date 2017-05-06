@@ -14,8 +14,6 @@
     <list default="true" id="b4342c2b-e2c0-44d8-b825-ab1d362b893d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chip8.cpp" afterPath="$PROJECT_DIR$/src/chip8.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chip8.h" afterPath="$PROJECT_DIR$/src/chip8.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
-              <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+              <caret line="127" column="47" lean-forward="false" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -51,8 +49,8 @@
       <file leaf-file-name="chip8.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chip8.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="539" column="71" lean-forward="false" selection-start-line="539" selection-start-column="71" selection-end-line="539" selection-end-column="71" />
+            <state relative-caret-position="111">
+              <caret line="530" column="0" lean-forward="true" selection-start-line="530" selection-start-column="0" selection-end-line="530" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -357,7 +355,7 @@
       <updated>1494098656355</updated>
       <workItem from="1494098659919" duration="1576000" />
       <workItem from="1494100274783" duration="1798000" />
-      <workItem from="1494102199679" duration="454000" />
+      <workItem from="1494102199679" duration="636000" />
     </task>
     <task id="LOCAL-00001" summary="Added single step and trace modes">
       <created>1494101684594</created>
@@ -373,11 +371,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494101822287</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added audio">
+      <created>1494102752436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494102752436</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3828000" />
+    <option name="totallyTimeSpent" value="4010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -413,7 +418,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added single step and trace modes" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="Added audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added audio" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -521,15 +527,15 @@
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
-          <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+          <caret line="127" column="47" lean-forward="false" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chip8.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="539" column="71" lean-forward="false" selection-start-line="539" selection-start-column="71" selection-end-line="539" selection-end-column="71" />
+        <state relative-caret-position="111">
+          <caret line="530" column="0" lean-forward="true" selection-start-line="530" selection-start-column="0" selection-end-line="530" selection-end-column="0" />
           <folding />
         </state>
       </provider>
