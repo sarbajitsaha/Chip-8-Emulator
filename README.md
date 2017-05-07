@@ -43,6 +43,19 @@ So you can start the PONG game available in the roms directory by
 ./Chip8_Emulator ../roms/PONG
 ```
 
+## Test
+
+To run tests
+
+```
+cd cmake-build-debug
+make tests
+./tests
+```
+
+Catch testing framework is used. More tests need to be added, so PRs are welcome. 
+
+
 ## Modes
 
 There are two modes available - trace mode and single step mode.

@@ -27,16 +27,6 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="Chip8_Emulator">
 				<Option output="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Chip8_Emulator" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug"/>
@@ -85,15 +75,80 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests">
+				<Option output="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/catch"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 tests"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests/fast">
+				<Option output="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/catch"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 tests/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.cpp">
 			<Option target="Chip8_Emulator"/>
+			<Option target="tests"/>
 		</Unit>
 		<Unit filename="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/chip8.h">
 			<Option target="Chip8_Emulator"/>
+			<Option target="tests"/>
 		</Unit>
 		<Unit filename="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/src/main.cpp">
 			<Option target="Chip8_Emulator"/>
+		</Unit>
+		<Unit filename="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/test/chip8_test.cpp">
+			<Option target="tests"/>
 		</Unit>
 		<Unit filename="/home/sarbajit/Programming/Personal/Cpp_projects/Chip-8-Emulator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
